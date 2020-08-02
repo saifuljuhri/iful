@@ -3,13 +3,13 @@ date_default_timezone_set('Asia/Jakarta');
 include "function.php";
 ulang:
 // function change(){
-echo color("red","             SCRIPT GRATIS TIDAK DI JUAL \n");
-echo color("white","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
-echo color("white","                    Never Extinct         \n");
-echo color("white","                  Format Kode 62*** \n");
+echo color("green","             SCRIPT GRATIS TIDAK DI JUAL \n");
+echo color("green","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("green","                    Never Extinct         \n");
+echo color("green","                  Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("white"," NOMOR  : ");
+        echo color("purple"," NOMOR  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -38,7 +38,7 @@ echo color("white","                  Format Kode 62*** \n");
         $otptoken = getStr('"otp_token":"','"',$register);
         echo color("white"," KODE OTP..")."\n";
         otp:
-        echo color("white"," Otp : ");
+        echo color("green"," Otp : ");
         $otp = trim(fgets(STDIN));
         $data1 = '{"client_name":"gojek:cons:android","data":{"otp":"' . $otp . '","otp_token":"' . $otptoken . '"},"client_secret":"83415d06-ec4e-11e6-a41b-6c40088ab51e"}';
         $verif = request("/v5/customers/phone/verify", null, $data1);
@@ -48,8 +48,8 @@ echo color("white","                  Format Kode 62*** \n");
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("white","+] Your access token : ".$token."\n\n");
         save("token.txt",$token); 
-        echo color("white","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("white","CLAIM A..");
+        echo color("red","\n▬▬▬▬▬▬▬▬▬▬▬▬CLAIM VOUCHER▬▬▬▬▬▬▬▬▬▬▬▬");
+        echo "\n".color("nevy","CLAIM A..");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -69,7 +69,7 @@ echo color("white","                  Format Kode 62*** \n");
         echo color("white",".");
         sleep(5);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD0607"}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2107"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
         echo "\n".color("green","Message: ".$message);
@@ -83,7 +83,7 @@ echo color("white","                  Format Kode 62*** \n");
         echo color("white",".");
         sleep(0);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":""}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code"PESANGOFOOD2107""}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
         sleep(2);
